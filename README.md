@@ -1,6 +1,6 @@
 # AWS S3 Helper
 
-First paste your access key and secret to ACCESS_KEY and SECRET, respectively.
+First open aws_helper.py in an editor and paste your access key and secret to ACCESS_KEY and SECRET, respectively.
 
 ## To get a list of buckets
 
@@ -32,8 +32,8 @@ dict = get_json_from_object(
 arr = get_numerical_array_from_object(
         bucket_name, key="dir/subdir/some.bin",
         access_key=ACCESS_KEY, secret=SECRET,
-        res=4, # bytes
-        from_to=(0, None), # None for begin or end, e.g., arr[:50] -> (None, 50)
+        res=4,
+        from_to=(0, None),
 )
 
-from_to allows downloading only a slice (arr = big_array(from_to[0]: from_to[1]), res refers to the byte resolution of the binary file.
+from_to allows downloading only a slice (arr = big_array(from_to[0]: from_to[1]). Use None to refer to the begining or the end, e.g., arr[:50] -> (None, 50). Input res refers to the byte resolution of the binary file.
